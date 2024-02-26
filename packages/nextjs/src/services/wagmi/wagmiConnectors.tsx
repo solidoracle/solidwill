@@ -2,7 +2,7 @@ import { getDefaultWallets, connectorsForWallets } from '@rainbow-me/rainbowkit'
 import { argentWallet, trustWallet, ledgerWallet } from '@rainbow-me/rainbowkit/wallets';
 import { publicProvider } from '@wagmi/core/providers/public';
 import { configureChains, createConfig } from 'wagmi';
-import { goerli, sepolia } from 'wagmi/chains';
+import { sepolia } from 'wagmi/chains';
 import '@rainbow-me/rainbowkit/styles.css';
 
 export const { chains, publicClient, webSocketPublicClient } = configureChains([sepolia], [publicProvider()]);
