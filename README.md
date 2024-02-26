@@ -2,7 +2,7 @@
 
 ## Overview
 
-Digital Will on the blockchain with a deadman switch infrastructure
+A cryptographic will on the blockchain with a deadman switch infrastructure which releases your data when you die.
 
 # Acknowledgements
 
