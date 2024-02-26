@@ -133,7 +133,7 @@ interface WillData {
   isActive: boolean;
 }
 
-export const WrappedDetailRow: React.FC<WrappedDetailRowProps> = ({ id, account, blockNumber }) => {
+const WrappedDetailRow: React.FC<WrappedDetailRowProps> = ({ id, account, blockNumber }) => {
   const { data, isLoading } = useContractRead({
     address: SOLIDWILLL_ADDRESS,
     abi: SOLIDWILL_ABI,
@@ -171,7 +171,7 @@ interface DashboardDetailRowProps {
   fileUrl: string;
 }
 
-export const DashboardDetailRow: React.FC<DashboardDetailRowProps> = ({
+const DashboardDetailRow: React.FC<DashboardDetailRowProps> = ({
   id,
   owner,
   lastHeartbeat,
@@ -228,7 +228,7 @@ export const DashboardDetailRow: React.FC<DashboardDetailRowProps> = ({
           </tr>
         </tbody>
         <tfoot>
-          <button className="mt-4 w-100% rounded-md bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+          <button className="w-100% mt-4 rounded-md bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
             Confirm Life
           </button>
         </tfoot>
@@ -243,7 +243,7 @@ interface AssumedDeadInProps {
   blockNumber?: number;
 }
 
-export const AssumedDeadIn: React.FC<AssumedDeadInProps> = ({ lastHeartbeat, cadence, blockNumber }) => {
+const AssumedDeadIn: React.FC<AssumedDeadInProps> = ({ lastHeartbeat, cadence, blockNumber }) => {
   // Simplified time left calculation and display
   const timeLeft = lastHeartbeat + cadence - (blockNumber ?? 0);
   return <div>Time Left: {timeLeft}</div>;
@@ -253,7 +253,7 @@ interface ActionAreaProps {
   switchId: number;
 }
 
-export const ActionArea: React.FC<ActionAreaProps> = ({ switchId }) => {
+const ActionArea: React.FC<ActionAreaProps> = ({ switchId }) => {
   // Simplified action area with a single button to send heartbeat
   return (
     <div>
@@ -266,7 +266,7 @@ interface SendHeartBeatProps {
   switchId: number;
 }
 
-export const SendHeartBeat: React.FC<SendHeartBeatProps> = ({ switchId }) => {
+const SendHeartBeat: React.FC<SendHeartBeatProps> = ({ switchId }) => {
   // Simplified send heartbeat functionality
   const sendHeartBeat = () => {
     console.log(`Sending heartbeat for switch ID: ${switchId}`);
